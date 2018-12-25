@@ -1,0 +1,57 @@
+import os
+#过滤不允许的字符
+def safename(filename):
+    for i in range(len(filename)):
+        filename = filename.replace("/", "")
+        filename = filename.replace("\\", "")
+        filename = filename.replace(":", "")
+        filename = filename.replace("*", "")
+        filename = filename.replace("\"", "")
+        filename = filename.replace("<", "")
+        filename = filename.replace(">", "")
+        filename = filename.replace("|", "")
+        filename = filename.replace("?", "")
+        filename = filename.replace("!", "")
+        filename = filename.replace("！","")
+        filename = filename.replace("‘","")
+        filename = filename.replace("’", "")
+        filename = filename.replace("“", "")
+        filename = filename.replace("”", "")
+        filename = filename.replace("、", "")
+        filename = filename.replace("？", "")
+        filename = filename.replace("/", "")
+        filename = filename.replace("，", "")
+        filename = filename.replace("~", "")
+        filename = filename.replace("·", "")
+        filename = filename.replace("&", "")
+        filename = filename.replace("  "," ")
+        if(not(os.path.exists("img"+os.path.sep+filename))):
+            os.mkdir("img"+os.path.sep+filename)
+#过滤不允许的字符
+def safeimg(filename,imgname):
+    for i in range(len(filename)):
+        filename = filename.replace("/", "")
+        filename = filename.replace("\\", "")
+        filename = filename.replace(":", "")
+        filename = filename.replace("*", "")
+        filename = filename.replace("\"", "")
+        filename = filename.replace("<", "")
+        filename = filename.replace(">", "")
+        filename = filename.replace("|", "")
+        filename = filename.replace("?", "")
+        filename = filename.replace("!", "")
+        filename = filename.replace("！","")
+        filename = filename.replace("‘","")
+        filename = filename.replace("’", "")
+        filename = filename.replace("“", "")
+        filename = filename.replace("”", "")
+        filename = filename.replace("、", "")
+        filename = filename.replace("？", "")
+        filename = filename.replace("/", "")
+        filename = filename.replace("，", "")
+        filename = filename.replace("~", "")
+        filename = filename.replace("·", "")
+        filename = filename.replace("&", "")
+        filename = filename.replace("  "," ")
+    filename = "img"+os.path.sep+filename+os.path.sep+imgname+".jpg"
+    return filename
